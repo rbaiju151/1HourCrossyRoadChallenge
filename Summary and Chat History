@@ -262,3 +262,30 @@ Cars are spawned by a lane-level “spawner” timer (clean + predictable), not 
 
 Below is a drop-in replacement for the “cars/roads” portion, but since you want one file, here’s the full updated file so you can just paste and run.
 
+
+Prompt 5: Ok, this looks great. Now let's add the water feature to the game. Have static lily pads so that players can jump onto them, but also have moving logs that players must time and jump onto in order to cross the river.
+
+Response 5: Awesome — adding River lanes is the first “this is really Crossy/Frogger now” feature.
+
+Below is a single-file pygame version that adds:
+
+River lanes (type == "river") with:
+
+Static lily pads (safe platforms you can land on)
+
+Moving logs (platforms you must time)
+
+Water death if you’re on a river lane and not standing on a pad/log
+
+Log carry: if you’re standing on a log, it carries you sideways
+
+Roads/cars remain as you had them (cars enter from left, lane speeds vary)
+
+Paste this whole file and run.
+
+
+
+
+
+Prompt 6: Looks like we have a pretty major bug, but one that can be fixed. Firstly, lily pads and logs should not be in the same lane. A lane should either be lily pads or logs, and we can have rivers that are two or three lanes wide. Secondly, the game incorrectly ends after jumping off a lily pad onto the next lane. Let's see if we can fix these bugs!
+
